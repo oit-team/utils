@@ -1,18 +1,17 @@
-import bufferToURL from './bufferToURL'
-
 /**
  * 下载文件
- * @param {ArrayBuffer} buffer
- * @param {string} fileName
+ * @param blob 文件流
+ * @param filename 文件名
  */
-function downloadFile(buffer: ArrayBuffer, fileName: string) {
-  const url = bufferToURL(buffer)
-  const downloadElement = document.createElement('a')
-  downloadElement.style.display = 'none'
-  downloadElement.href = url
-  downloadElement.download = fileName
-  downloadElement.click()
-  window.URL.revokeObjectURL(url)
+async function downloadFile(blob: Blob | ArrayBuffer, filename: string) {
+  if (blob instanceof ArrayBuffer)
+    blob = new Blob([blob], { type: 'application/octet-stream' })
+
+  const a = document.createElement('a')
+  a.href = URL.createObjectURL(blob)
+  a.download = filename
+  a.click()
+  URL.revokeObjectURL(a.href)
 }
 
 export default downloadFile

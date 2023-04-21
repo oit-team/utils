@@ -2,20 +2,26 @@
   "name": "@oit/utils",
   "version": "0.1.0",
   "description": "公共工具库",
+  "author": "uxuip <uxuip@outlook.com>",
+  "license": "MIT",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
-  "author": "qiuxu",
-  "license": "MIT",
+  "scripts": {
+    "build": "rimraf ./dist && tsc",
+    "bump": "bumpp --no-push",
+    "release": "pnpm publish"
+  },
   "devDependencies": {
+    "@uxuip/eslint-config-ts": "^0.1.7",
     "bumpp": "^8.2.1",
+    "eslint": "^8.38.0",
     "rimraf": "^3.0.2",
     "typescript": "^4.6.2"
   },
-  "scripts": {
-    "build": "rimraf ./lib && tsc",
-    "release": "bumpp package.json --no-push && pnpm publish"
-  },
   "publishConfig": {
     "registry": "http://192.168.9.16:4873"
+  },
+  "eslintConfig": {
+    "extends": "@uxuip/eslint-config-ts"
   }
 }
