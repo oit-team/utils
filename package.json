@@ -9,14 +9,16 @@
   "scripts": {
     "build": "rimraf ./dist && tsc",
     "bump": "bumpp --no-push",
-    "release": "pnpm publish"
+    "release": "pnpm publish",
+    "test": "vitest"
   },
   "devDependencies": {
     "@uxuip/eslint-config-ts": "^0.1.7",
     "bumpp": "^8.2.1",
     "eslint": "^8.38.0",
     "rimraf": "^3.0.2",
-    "typescript": "^4.6.2"
+    "typescript": "^4.6.2",
+    "vitest": "^0.30.1"
   },
   "publishConfig": {
     "registry": "http://192.168.9.16:4873"
