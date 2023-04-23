@@ -4,8 +4,8 @@
   "description": "公共工具库",
   "author": "uxuip <uxuip@outlook.com>",
   "license": "MIT",
-  "main": "lib/index.js",
-  "types": "lib/index.d.ts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "build": "rimraf ./dist && tsc",
     "bump": "bumpp --no-push",
